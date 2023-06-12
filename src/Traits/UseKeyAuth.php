@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Integrations\NowPayments\Traits;
+namespace Harry\NowPaymentsLaravel\Traits;
 
 trait UseKeyAuth
 {
     protected function defaultAuth(): ?\Saloon\Contracts\Authenticator
     {
-        return new \App\Http\Integrations\NowPayments\Contracts\KeyBasedAuthenticator();
+        return new \Harry\NowPaymentsLaravel\Contracts\KeyBasedAuthenticator();
     }
 }

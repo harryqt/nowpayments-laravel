@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Integrations\NowPayments\Contracts;
+namespace Harry\NowPaymentsLaravel\Contracts;
 
 use Saloon\Contracts\Authenticator;
 use Saloon\Contracts\PendingRequest;

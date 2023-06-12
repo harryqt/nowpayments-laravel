@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Integrations\NowPayments\Traits;
+namespace Harry\NowPaymentsLaravel\Traits;
 
 trait UseJwtAuth
 {
     protected function defaultAuth(): ?\Saloon\Contracts\Authenticator
     {
-        return new \App\Http\Integrations\NowPayments\Contracts\JwtBasedAuthenticator();
+        return new \Harry\NowPaymentsLaravel\Contracts\JwtBasedAuthenticator();
     }
 }

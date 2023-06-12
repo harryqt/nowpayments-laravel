@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Integrations\NowPayments\Requests;
+namespace Harry\NowPaymentsLaravel\Requests;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;

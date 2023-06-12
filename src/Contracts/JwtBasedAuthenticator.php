@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Integrations\NowPayments\Contracts;
+namespace Harry\NowPaymentsLaravel\Contracts;
 
-use App\Http\Integrations\NowPayments\Requests\GetAuthTokenRequest;
+use Harry\NowPaymentsLaravel\Requests\GetAuthTokenRequest;
 use Illuminate\Support\Facades\Cache;
 use Saloon\Contracts\Authenticator;
 use Saloon\Contracts\PendingRequest;

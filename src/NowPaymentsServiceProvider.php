@@ -14,6 +14,6 @@ class NowPaymentsServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->app->singleton(NowPayments::class, fn () => new NowPayments());
+        $this->app->singleton(NowPayments::class, fn () => new NowPayments);
     }
 }

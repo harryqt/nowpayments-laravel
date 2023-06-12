@@ -15,14 +15,14 @@ class GetPayoutsListRequest extends Request
     protected Method $method = Method::GET;
 
     public function __construct(
-        protected int $id = null,
-        protected string $status = null,
-        protected string $orderBy = null,
-        protected string $order = null,
-        protected \DateTime $dateFrom = null,
-        protected \DateTime $dateTo = null,
-        protected int $limit = null,
-        protected int $page = null,
+        protected ?int $id = null,
+        protected ?string $status = null,
+        protected ?string $orderBy = null,
+        protected ?string $order = null,
+        protected ?\DateTime $dateFrom = null,
+        protected ?\DateTime $dateTo = null,
+        protected ?int $limit = null,
+        protected ?int $page = null,
     ) {
     }
 

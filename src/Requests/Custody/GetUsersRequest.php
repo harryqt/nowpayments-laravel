@@ -15,13 +15,13 @@ class GetUsersRequest extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  int[]  $id
+     * @param  null|int|int[]  $id
      */
     public function __construct(
-        protected int|array $id = null,
-        protected int $offset = null,
-        protected int $limit = null,
-        protected int $order = null,
+        protected mixed $id = null,
+        protected ?int $offset = null,
+        protected ?int $limit = null,
+        protected ?int $order = null,
     ) {
     }
 

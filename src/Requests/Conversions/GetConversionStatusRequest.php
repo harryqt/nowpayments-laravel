@@ -20,15 +20,6 @@ class GetConversionStatusRequest extends Request
 
     public function resolveEndpoint(): string
     {
-        return '/conversion';
-    }
-
-    protected function defaultQuery(): array
-    {
-        $queries = [];
-
-        $this->conversionId ? $queries['conversion_id'] = $this->conversionId : '';
-
-        return $queries;
+        return '/conversion/'.$this->conversionId;
     }
 }

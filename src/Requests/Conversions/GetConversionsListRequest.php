@@ -15,19 +15,19 @@ class GetConversionsListRequest extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  int[]  $id
-     * @param  string[]  $status
+     * @param  null|int|int[]  $id
+     * @param  null|string|string[]  $status
      */
     public function __construct(
-        protected int|array $id,
-        protected string|array $status,
-        protected string $fromCurrency,
-        protected string $toCurrency,
-        protected \DateTime $createdAtFrom,
-        protected \DateTime $createdAtTo,
-        protected int $limit,
-        protected int $offset,
-        protected string $order,
+        protected mixed $id = null,
+        protected mixed $status = null,
+        protected ?string $fromCurrency = null,
+        protected ?string $toCurrency = null,
+        protected ?\DateTime $createdAtFrom = null,
+        protected ?\DateTime $createdAtTo = null,
+        protected ?int $limit = null,
+        protected ?int $offset = null,
+        protected ?string $order = null,
     ) {
     }
 

@@ -15,15 +15,15 @@ class GetAllTransfersRequest extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  int[]  $id
-     * @param  string[]  $status
+     * @param  null|int|int[]  $id
+     * @param  null|string|string[]  $status
      */
     public function __construct(
-        protected int|array $id = null,
-        protected string|array $status = null,
-        protected int $offset = null,
-        protected int $limit = null,
-        protected int $order = null,
+        protected mixed $id = null,
+        protected mixed $status = null,
+        protected ?int $offset = null,
+        protected ?int $limit = null,
+        protected ?int $order = null,
     ) {
     }
 

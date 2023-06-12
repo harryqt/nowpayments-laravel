@@ -1,0 +1,28 @@
+{
+    "name": "harry/nowpayments-laravel",
+    "description": "NowPayments for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Harry\\NowPaymentsLaravel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "harry",
+            "email": "contact@harry.plus"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "sammyjo20/saloon": "^2.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Harry\\NowPaymentsLaravel\\NowPaymentsServiceProvider"
+            ]
+        }
+    }
+}

@@ -19,8 +19,8 @@ class GetPayoutsListRequest extends Request
         protected ?string $status = null,
         protected ?string $orderBy = null,
         protected ?string $order = null,
-        protected ?\DateTime $dateFrom = null,
-        protected ?\DateTime $dateTo = null,
+        protected ?string $dateFrom = null,
+        protected ?string $dateTo = null,
         protected ?int $limit = null,
         protected ?int $page = null,
     ) {

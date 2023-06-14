@@ -8,10 +8,6 @@ use Illuminate\Support\ServiceProvider;
 
 class NowPaymentsServiceProvider extends ServiceProvider
 {
-    public function register(): void
-    {
-    }
-
     public function boot(): void
     {
         $this->app->singleton(NowPayments::class, fn () => new NowPayments);

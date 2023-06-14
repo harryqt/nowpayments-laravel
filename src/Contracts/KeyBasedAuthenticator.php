@@ -16,6 +16,10 @@ class KeyBasedAuthenticator implements Authenticator
 
     private function getApiKey(): string
     {
-        return env('NOWPAYMENTS_API_KEY');
+        $key = config('nowpayments.key');
+
+        throw_if($key === null, new \RuntimeException('Api key not defined.'));
+
+        return $key;
     }
 }

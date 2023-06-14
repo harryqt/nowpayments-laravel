@@ -7,10 +7,11 @@ namespace Harry\NowPaymentsLaravel;
 use Saloon\Contracts\PendingRequest;
 use Saloon\Http\Connector;
 use Saloon\Traits\Plugins\AcceptsJson;
+use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 
 class NowPayments extends Connector
 {
-    use AcceptsJson;
+    use AlwaysThrowOnErrors, AcceptsJson;
 
     public function resolveBaseUrl(): string
     {

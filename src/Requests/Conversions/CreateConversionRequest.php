@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPaymentsLaravel\Requests\Conversions;
+namespace Harry\NowPayments\Requests\Conversions;
 
-use Harry\NowPaymentsLaravel\Traits\UseJwtAuth;
+use Harry\NowPayments\Traits\UseJwtAuth;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;

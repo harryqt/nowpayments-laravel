@@ -5,7 +5,7 @@ NowPayments SDK for Laravel 10+
 ### Installation
 
 ```sh
-php artisan vendor:publish --provider="Harry\NowPaymentsLaravel\NowPaymentsServiceProvider"
+php artisan vendor:publish --provider="Harry\NowPayments\NowPaymentsServiceProvider"
 ```
 
 or directly on .env

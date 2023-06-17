@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPaymentsLaravel;
+namespace Harry\NowPayments;
 
 use Saloon\Contracts\PendingRequest;
 use Saloon\Http\Connector;

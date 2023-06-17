@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPaymentsLaravel\Requests\Currencies;
+namespace Harry\NowPayments\Requests\Currencies;
 
-use Harry\NowPaymentsLaravel\Traits\UseKeyAuth;
+use Harry\NowPayments\Traits\UseKeyAuth;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 

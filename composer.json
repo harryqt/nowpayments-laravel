@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Harry\\NowPaymentsLaravel\\": "src/"
+            "Harry\\NowPayments\\": "src/"
         }
     },
     "authors": [
@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Harry\\NowPaymentsLaravel\\NowPaymentsServiceProvider"
+                "Harry\\NowPayments\\NowPaymentsServiceProvider"
             ]
         }
     }

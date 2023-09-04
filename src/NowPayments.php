@@ -15,7 +15,7 @@ class NowPayments extends Connector
 
     public function resolveBaseUrl(): string
     {
-        return 'https://api.nowpayments.io/v1/';
+        return 'https://api.nowpayments.io/v1';
     }
 
     public function boot(PendingRequest $pendingRequest): void

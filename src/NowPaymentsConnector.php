@@ -9,13 +9,14 @@ use Saloon\Http\Connector;
 use Saloon\Traits\Plugins\AcceptsJson;
 use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 
-class NowPayments extends Connector
+class NowPaymentsConnector extends Connector
 {
-    use AlwaysThrowOnErrors, AcceptsJson;
+    use AcceptsJson, AlwaysThrowOnErrors;
 
     public function resolveBaseUrl(): string
     {
-        return 'https://api.nowpayments.io/v1';
+        // return 'https://api.nowpayments.io/v1/';
+        return 'https://api-sandbox.nowpayments.io/v1/';
     }
 
     public function boot(PendingRequest $pendingRequest): void

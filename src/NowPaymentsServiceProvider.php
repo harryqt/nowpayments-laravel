@@ -17,6 +17,6 @@ class NowPaymentsServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        $this->app->singleton(NowPayments::class, fn () => new NowPayments);
+        $this->app->singleton(NowPaymentsConnector::class, fn () => new NowPaymentsConnector);
     }
 }

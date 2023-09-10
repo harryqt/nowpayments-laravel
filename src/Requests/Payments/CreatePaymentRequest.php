@@ -12,7 +12,7 @@ use Saloon\Traits\Body\HasJsonBody;
 
 class CreatePaymentRequest extends Request implements HasBody
 {
-    use UseKeyAuth, HasJsonBody;
+    use HasJsonBody, UseKeyAuth;
 
     protected Method $method = Method::POST;
 

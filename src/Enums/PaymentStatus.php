@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments\Enums;
+namespace Harryqt\NowPayments\Enums;
 
 enum PaymentStatus: string
 {

@@ -1,11 +1,11 @@
 # NowPayments Laravel
 
-NowPayments SDK for Laravel 10+
+NowPayments PHP SDK for Laravel
 
 ### Installation
 
 ```sh
-php artisan vendor:publish --provider="Harry\NowPayments\NowPaymentsServiceProvider"
+php artisan vendor:publish --provider="Harryqt\NowPayments\NowPaymentsServiceProvider"
 ```
 
 or directly on .env
@@ -17,4 +17,3 @@ NOWPAYMENTS_PASSWORD=""
 ```
 
 ### How to use
-

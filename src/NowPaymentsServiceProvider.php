@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments;
+namespace Harryqt\NowPayments;
 
 use Illuminate\Support\ServiceProvider;
 

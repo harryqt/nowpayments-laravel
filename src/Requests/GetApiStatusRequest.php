@@ -2,15 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments\Requests;
+namespace Harryqt\NowPayments\Requests;
 
-use Saloon\Enums\Method;
-use Saloon\Http\Request;
-
-class GetApiStatusRequest extends Request
+class GetApiStatusRequest extends BaseRequest
 {
-    protected Method $method = Method::GET;
-
     public function resolveEndpoint(): string
     {
         return '/status';

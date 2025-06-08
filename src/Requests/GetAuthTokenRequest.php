@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments\Requests;
+namespace Harryqt\NowPayments\Requests;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
@@ -25,8 +25,8 @@ class GetAuthTokenRequest extends Request implements HasBody
         $email = config('nowpayments.email');
         $password = config('nowpayments.password');
 
-        throw_if($email === null, new \RuntimeException('Email is not defined.'));
-        throw_if($password === null, new \RuntimeException('Password is not defined.'));
+        throw_if($email === null, new \RuntimeException('Email not defined.'));
+        throw_if($password === null, new \RuntimeException('Password not defined.'));
 
         return [
             'email' => $email,

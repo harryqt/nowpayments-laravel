@@ -2,21 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments\Requests\Custody;
+namespace Harryqt\NowPayments\Requests\Custody;
 
-use Harry\NowPayments\Traits\UseJwtAuth;
-use Saloon\Enums\Method;
-use Saloon\Http\Request;
+use Harryqt\NowPayments\Requests\BaseRequest;
 
-class GetUserBalanceRequest extends Request
+class GetUserBalanceRequest extends BaseRequest
 {
-    use UseJwtAuth;
-
-    protected Method $method = Method::GET;
-
-    public function __construct(protected int $id)
-    {
-    }
+    public function __construct(protected int $id) {}
 
     public function resolveEndpoint(): string
     {

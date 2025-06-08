@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments\Contracts;
+namespace Harryqt\NowPayments\Contracts;
 
-use Harry\NowPayments\Requests\GetAuthTokenRequest;
+use Harryqt\NowPayments\Requests\GetAuthTokenRequest;
 use Illuminate\Support\Facades\Cache;
 use Saloon\Contracts\Authenticator;
-use Saloon\Contracts\PendingRequest;
+use Saloon\Http\PendingRequest;
 
-class JwtBasedAuthenticator implements Authenticator
+class JwtAuthenticator implements Authenticator
 {
     public function set(PendingRequest $pendingRequest): void
     {
@@ -20,7 +20,7 @@ class JwtBasedAuthenticator implements Authenticator
 
         // Store the cache for 290 seconds instead of 300, so it
         // can get a new token before the old expires.
-        $token = Cache::remember('nowpayments-bearer-xvyqexs2ak', 290, function () use ($pendingRequest) {
+        $token = Cache::remember('nowpayments-bearer-jwt-token', 290, function () use ($pendingRequest) {
             return $pendingRequest->getConnector()->send(new GetAuthTokenRequest)->json('token');
         });
 

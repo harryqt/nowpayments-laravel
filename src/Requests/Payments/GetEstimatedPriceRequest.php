@@ -2,24 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments\Requests\Payments;
+namespace Harryqt\NowPayments\Requests\Payments;
 
-use Harry\NowPayments\Traits\UseKeyAuth;
-use Saloon\Enums\Method;
-use Saloon\Http\Request;
+use Harryqt\NowPayments\Requests\BaseRequest;
 
-class GetEstimatedPriceRequest extends Request
+class GetEstimatedPriceRequest extends BaseRequest
 {
-    use UseKeyAuth;
-
-    protected Method $method = Method::GET;
-
     public function __construct(
-        protected int $amount,
-        protected string $currencyFrom,
-        protected string $currencyTo,
-    ) {
-    }
+        protected float $amount,
+        protected string $currency_from,
+        protected string $currency_to,
+    ) {}
 
     public function resolveEndpoint(): string
     {
@@ -28,10 +21,6 @@ class GetEstimatedPriceRequest extends Request
 
     protected function defaultQuery(): array
     {
-        return [
-            'amount' => $this->amount,
-            'currency_from' => $this->currencyFrom,
-            'currency_to' => $this->currencyTo,
-        ];
+        return $this->getConstructorParams();
     }
 }

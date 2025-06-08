@@ -2,24 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments\Requests\Payments;
+namespace Harryqt\NowPayments\Requests\Payments;
 
-use Harry\NowPayments\Traits\UseKeyAuth;
-use Saloon\Enums\Method;
-use Saloon\Http\Request;
+use Harryqt\NowPayments\Requests\BaseRequest;
 
-class GetPaymentStatusRequest extends Request
+class GetPaymentStatusRequest extends BaseRequest
 {
-    use UseKeyAuth;
-
-    protected Method $method = Method::GET;
-
-    public function __construct(protected int $paymentId)
-    {
-    }
+    public function __construct(protected int $payment_id) {}
 
     public function resolveEndpoint(): string
     {
-        return '/payment/'.$this->paymentId;
+        return '/payment/'.$this->payment_id;
     }
 }

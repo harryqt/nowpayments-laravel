@@ -2,18 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments\Middleware;
+namespace Harryqt\NowPayments\Middleware;
 
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class EnsureIpnIsValid
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
     public function handle(Request $request, \Closure $next): Response
     {
         if (! $request->hasHeader('x-nowpayments-sig')) {

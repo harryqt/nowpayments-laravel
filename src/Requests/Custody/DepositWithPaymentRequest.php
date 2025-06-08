@@ -2,29 +2,29 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments\Requests\Custody;
+namespace Harryqt\NowPayments\Requests\Custody;
 
-use Harry\NowPayments\Traits\UseKeyAuth;
+use Harryqt\NowPayments\Contracts\JwtAuthenticator;
+use Harryqt\NowPayments\Requests\BaseRequest;
+use Saloon\Contracts\Authenticator;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class DepositWithPaymentRequest extends Request implements HasBody
+class DepositWithPaymentRequest extends BaseRequest implements HasBody
 {
-    use HasJsonBody, UseKeyAuth;
+    use HasJsonBody;
 
     protected Method $method = Method::POST;
 
     public function __construct(
         protected string $currency,
         protected float $amount,
-        protected int|string $subPartnerId,
-        protected bool $fixedRate = false,
-        protected bool $feePaidByUser = false,
-        protected ?string $ipnCallbackUrl = null,
-    ) {
-    }
+        protected string $sub_partner_id,
+        protected bool $is_fixed_rate = false,
+        protected bool $is_fee_paid_by_user = false,
+        protected ?string $ipn_callback_url = null,
+    ) {}
 
     public function resolveEndpoint(): string
     {
@@ -33,18 +33,11 @@ class DepositWithPaymentRequest extends Request implements HasBody
 
     protected function defaultBody(): array
     {
-        $body = [
-            'currency' => $this->currency,
-            'amount' => $this->amount,
-            'sub_partner_id' => strval($this->subPartnerId),
-            'is_fixed_rate' => $this->fixedRate,
-            'is_fee_paid_by_user' => $this->feePaidByUser,
-        ];
+        return $this->getConstructorParams();
+    }
 
-        if ($this->ipnCallbackUrl) {
-            $body['ipn_callback_url'] = $this->ipnCallbackUrl;
-        }
-
-        return $body;
+    protected function defaultAuth(): Authenticator
+    {
+        return new JwtAuthenticator;
     }
 }

@@ -2,24 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Harry\NowPayments\Requests\Payments;
+namespace Harryqt\NowPayments\Requests\Payments;
 
-use Harry\NowPayments\Traits\UseKeyAuth;
-use Saloon\Enums\Method;
-use Saloon\Http\Request;
+use Harryqt\NowPayments\Requests\BaseRequest;
 
-class GetMinimumPaymentAmountRequest extends Request
+class GetMinimumPaymentAmountRequest extends BaseRequest
 {
-    use UseKeyAuth;
-
-    protected Method $method = Method::GET;
-
     public function __construct(
-        protected string $currencyFrom,
-        protected string $currencyTo,
-        protected bool $fiatEquivalent = false,
-    ) {
-    }
+        protected string $currency_from,
+        protected string $currency_to,
+        protected string $fiat_equivalent = 'usd',
+        protected bool $is_fixed_rate = false,
+        protected bool $is_fee_paid_by_user = false,
+    ) {}
 
     public function resolveEndpoint(): string
     {
@@ -28,13 +23,6 @@ class GetMinimumPaymentAmountRequest extends Request
 
     protected function defaultQuery(): array
     {
-        $queries = [
-            'currency_from' => $this->currencyFrom,
-            'currency_to' => $this->currencyTo,
-        ];
-
-        $this->fiatEquivalent ? $queries['fiat_equivalent'] = $this->fiatEquivalent : '';
-
-        return $queries;
+        return $this->getConstructorParams();
     }
 }

@@ -22,8 +22,8 @@ class GetAuthTokenRequest extends Request implements HasBody
 
     protected function defaultBody(): array
     {
-        $email = config('nowpayments.email');
-        $password = config('nowpayments.password');
+        $email = env('NOWPAYMENTS_EMAIL');
+        $password = env('NOWPAYMENTS_PASSWORD');
 
         throw_if($email === null, new \RuntimeException('Email not defined.'));
         throw_if($password === null, new \RuntimeException('Password not defined.'));

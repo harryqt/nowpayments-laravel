@@ -16,6 +16,9 @@ class EnsureIpnIsValid
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $ipn_secret = env('NOWPAYMENTS_IPN_SECRET');
+        throw_if($ipn_secret === null, new \RuntimeException('NOWPAYMENTS_IPN_SECRET not defined.'));
+
         if (! $request->hasHeader('x-nowpayments-sig')) {
             throw new RuntimeException('x-nowpayments-sig header is missing.');
         }
@@ -25,7 +28,7 @@ class EnsureIpnIsValid
         }
 
         ksort($requestData);
-        $hash = hash_hmac('sha512', json_encode($requestData), config('nowpayments.ipn_secret'));
+        $hash = hash_hmac('sha512', json_encode($requestData), $ipn_secret);
 
         if ($hash !== $request->header('x-nowpayments-sig')) {
             throw new RuntimeException('Calculated hash differs from received hash.');

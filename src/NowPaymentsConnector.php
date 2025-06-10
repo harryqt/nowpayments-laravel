@@ -43,9 +43,8 @@ class NowPaymentsConnector extends Connector
 
     private function getApiKey(): string
     {
-        $key = config('nowpayments.key');
-
-        throw_if($key === null, new \RuntimeException('Api key not defined.'));
+        $key = env('NOWPAYMENTS_API_KEY');
+        throw_if($key === null, new \RuntimeException('NOWPAYMENTS_API_KEY not defined.'));
 
         return $key;
     }

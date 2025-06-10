@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Harryqt\NowPayments\Middleware;
 
 use Closure;
-use RuntimeException;
 use Illuminate\Http\Request;
+use RuntimeException;
 use Symfony\Component\HttpFoundation\Response;
 
 class EnsureIpnIsValid

@@ -9,7 +9,7 @@ use Harryqt\NowPayments\Requests\BaseRequest;
 class GetEstimatedPriceRequest extends BaseRequest
 {
     public function __construct(
-        protected float $amount,
+        protected int|float|string $amount,
         protected string $currency_from,
         protected string $currency_to,
     ) {}

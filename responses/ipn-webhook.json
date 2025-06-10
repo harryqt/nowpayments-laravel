@@ -1,0 +1,78 @@
+{
+    "actually_paid": 0.78,
+    "actually_paid_at_fiat": 0.78,
+    "fee": {
+        "currency": "ton",
+        "depositFee": 0.01,
+        "serviceFee": 0.00385,
+        "withdrawalFee": 0
+    },
+    "invoice_id": 6060616802,
+    "order_description": null,
+    "order_id": null,
+    "outcome_amount": 0.76615,
+    "outcome_currency": "ton",
+    "parent_payment_id": null,
+    "pay_address": "UQD8XzQ5QjIwe8ndSLueVyQ_fa_lD8lz8c5LrOFlhIVqJPn2",
+    "pay_amount": 100,
+    "pay_currency": "ton",
+    "payin_extra_id": null,
+    "payment_extra_ids": null,
+    "payment_id": 5170245329,
+    "payment_status": "partially_paid",
+    "price_amount": 100,
+    "price_currency": "ton",
+    "purchase_id": "4919950580",
+    "updated_at": 1749522415506
+}
+
+{
+    "host": [
+        "localhost:8700"
+    ],
+    "user-agent": [
+        "NOWPayments v1.0"
+    ],
+    "x-request-id": [
+        "de963044d6096c7ea56a327815814918"
+    ],
+    "x-real-ip": [
+        "51.75.77.69"
+    ],
+    "x-forwarded-port": [
+        "443"
+    ],
+    "x-forwarded-scheme": [
+        "https"
+    ],
+    "x-original-uri": [
+        "\/api\/ipn"
+    ],
+    "x-scheme": [
+        "https"
+    ],
+    "x-nowpayments-sig": [
+        "ae5dd3625d4b3fd605f93aace4d78da60da5eed2f9605fdbe126a843023e66e2897ae1de300ba7632e17ffcde556a10d87f280790792f829dfa63732be4d7bb3"
+    ],
+    "x-original-proto": [
+        "https"
+    ],
+    "x-forwarded-proto": [
+        "https"
+    ],
+    "x-forwarded-host": [
+        "4t5r8905-8700.inc1.devtunnels.ms"
+    ],
+    "x-forwarded-for": [
+        "51.75.77.69"
+    ],
+    "proxy-connection": [
+        "Keep-Alive"
+    ],
+    "content-type": [
+        "application\/json"
+    ],
+    "content-length": [
+        "577"
+    ]
+}

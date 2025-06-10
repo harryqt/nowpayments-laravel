@@ -12,12 +12,10 @@ class NowPaymentsConnector extends Connector
 {
     use AcceptsJson;
 
-    public function __construct(protected readonly string $apiKey) {}
-
     public function resolveBaseUrl(): string
     {
-        return 'https://api.nowpayments.io/v1';
-        // return 'https://api-sandbox.nowpayments.io/v1';
+        return 'https://api.nowpayments.io/v1/';
+        // return 'https://api-sandbox.nowpayments.io/v1/';
     }
 
     public function boot(PendingRequest $pendingRequest): void
@@ -39,7 +37,16 @@ class NowPaymentsConnector extends Connector
     protected function defaultHeaders(): array
     {
         return [
-            'X-Api-Key' => $this->apiKey,
+            'X-Api-Key' => $this->getApiKey(),
         ];
+    }
+
+    private function getApiKey(): string
+    {
+        $key = config('nowpayments.key');
+
+        throw_if($key === null, new \RuntimeException('Api key not defined.'));
+
+        return $key;
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "harryqt/nowpayments-laravel",
-    "description": "NowPayments SDK for Laravel",
+    "description": "NowPayments for Laravel",
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -20,5 +20,12 @@
     },
     "require-dev": {
         "laravel/pint": "^1.13"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Harryqt\\NowPayments\\NowPaymentsServiceProvider"
+            ]
+        }
     }
 }

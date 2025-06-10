@@ -21,10 +21,7 @@ class JwtAuthenticator implements Authenticator
         // Store the cache for 290 seconds instead of 300, so it
         // can get a new token before the old expires.
         $token = Cache::remember('nowpayments-bearer-jwt-token', 290, function () use ($pendingRequest) {
-            return $pendingRequest->getConnector()->send(new GetAuthTokenRequest(
-                env('NOWPAYMENTS_EMAIL'),
-                env('NOWPAYMENTS_PASSWORD'),
-            ))->json('token');
+            return $pendingRequest->getConnector()->send(new GetAuthTokenRequest)->json('token');
         });
 
         $pendingRequest->headers()->add('Authorization', 'Bearer '.$token);

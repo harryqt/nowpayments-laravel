@@ -5,14 +5,15 @@ NowPayments PHP SDK for Laravel
 ### Installation
 
 ```sh
-composer require harryqt/nowpayments-laravel
+php artisan vendor:publish --provider="Harryqt\NowPayments\NowPaymentsServiceProvider"
 ```
 
-### How to use
+or directly on .env
 
 ```ini
 NOWPAYMENTS_API_KEY=""
 NOWPAYMENTS_EMAIL=""
 NOWPAYMENTS_PASSWORD=""
-NOWPAYMENTS_IPN_SECRET=""
 ```
+
+### How to use

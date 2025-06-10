@@ -11,6 +11,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class EnsureIpnIsValid
 {
+    /**
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     */
     public function handle(Request $request, Closure $next): Response
     {
         if (! $request->hasHeader('x-nowpayments-sig')) {

@@ -15,6 +15,11 @@ class GetAuthTokenRequest extends Request implements HasBody
 
     protected Method $method = Method::POST;
 
+    public function __construct(
+        protected readonly string $email,
+        protected readonly string $password
+    ) {}
+
     public function resolveEndpoint(): string
     {
         return '/auth';
@@ -22,15 +27,9 @@ class GetAuthTokenRequest extends Request implements HasBody
 
     protected function defaultBody(): array
     {
-        $email = config('nowpayments.email');
-        $password = config('nowpayments.password');
-
-        throw_if($email === null, new \RuntimeException('Email not defined.'));
-        throw_if($password === null, new \RuntimeException('Password not defined.'));
-
         return [
-            'email' => $email,
-            'password' => $password,
+            'email' => $this->email,
+            'password' => $this->password,
         ];
     }
 }

@@ -1,4 +1,4 @@
-# NowPayments PHP SDK for Laravel
+# NowPayments SDK for Laravel
 
 ## Installation
 

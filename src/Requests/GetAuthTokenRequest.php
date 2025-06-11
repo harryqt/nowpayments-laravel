@@ -25,8 +25,8 @@ class GetAuthTokenRequest extends Request implements HasBody
         $email = env('NOWPAYMENTS_EMAIL');
         $password = env('NOWPAYMENTS_PASSWORD');
 
-        throw_if($email === null, new \RuntimeException('Email not defined.'));
-        throw_if($password === null, new \RuntimeException('Password not defined.'));
+        throw_if($email === null, new \RuntimeException('NOWPAYMENTS_EMAIL not defined.'));
+        throw_if($password === null, new \RuntimeException('NOWPAYMENTS_PASSWORD not defined.'));
 
         return [
             'email' => $email,

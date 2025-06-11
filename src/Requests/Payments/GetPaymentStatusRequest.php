@@ -8,7 +8,7 @@ use Harryqt\NowPayments\Requests\BaseRequest;
 
 class GetPaymentStatusRequest extends BaseRequest
 {
-    public function __construct(protected int $payment_id) {}
+    public function __construct(protected int|string $payment_id) {}
 
     public function resolveEndpoint(): string
     {

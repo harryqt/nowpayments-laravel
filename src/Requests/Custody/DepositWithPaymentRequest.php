@@ -20,7 +20,7 @@ class DepositWithPaymentRequest extends BaseRequest implements HasBody
     public function __construct(
         protected string $currency,
         protected int|float|string $amount,
-        protected string $sub_partner_id,
+        protected int|string $sub_partner_id,
         protected bool $is_fixed_rate = false,
         protected bool $is_fee_paid_by_user = false,
         protected ?string $ipn_callback_url = null,

@@ -8,7 +8,7 @@ use Harryqt\NowPayments\Requests\BaseRequest;
 
 class GetUserBalanceRequest extends BaseRequest
 {
-    public function __construct(protected int $id) {}
+    public function __construct(protected int|string $id) {}
 
     public function resolveEndpoint(): string
     {

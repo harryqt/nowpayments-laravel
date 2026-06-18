@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "saloonphp/saloon": "^3.13",
+        "saloonphp/saloon": "^4.0",
         "laravel/framework": "*"
     },
     "require-dev": {

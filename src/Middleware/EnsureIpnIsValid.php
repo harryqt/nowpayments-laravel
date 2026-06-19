@@ -12,12 +12,12 @@ use Symfony\Component\HttpFoundation\Response;
 class EnsureIpnIsValid
 {
     /**
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  Closure(Request): (Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
         $ipn_secret = env('NOWPAYMENTS_IPN_SECRET');
-        throw_if($ipn_secret === null, new \RuntimeException('NOWPAYMENTS_IPN_SECRET not defined.'));
+        throw_if($ipn_secret === null, new RuntimeException('NOWPAYMENTS_IPN_SECRET not defined.'));
 
         if (! $request->hasHeader('x-nowpayments-sig')) {
             throw new RuntimeException('x-nowpayments-sig header is missing.');
